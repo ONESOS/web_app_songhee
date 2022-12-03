@@ -4,14 +4,13 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../css/myPage_edit.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../css/common.css">
     <title>ONESOS - 프로필 편집하기</title>
 </head>
 
 <body>
     <header>
         <div class="div_header">
-            <button class="button_leftarrow" target="_self"  onclick="location.href='myPage.html'");><img
+            <button class="button_leftarrow" target="_self" onclick="location.href='myPage.html'" );><img
                     src="../image/leftarrow_icon.png"></button>
             프로필 편집하기
         </div>
@@ -65,13 +64,96 @@
     </main>
     <footer>
         <div class="div_footer">
-            <button class="button_success" id="button_success" >편집 완료</button>
+            <button onclick="EditUserData()" class="button_success" id="button_success">편집 완료</button>
         </div>
     </footer>
 
 </body>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+
+<script type="module">
+
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+    var firebaseConfig = {
+        apiKey: "AIzaSyAGcHYMEq3ZSdCTj6eEkEZy2m-IHENFh98",
+        authDomain: "myren-5a547.firebaseapp.com",
+        databaseURL: "https://myren-5a547-default-rtdb.firebaseio.com",
+        projectId: "myren-5a547",
+        storageBucket: "myren-5a547.appspot.com",
+        messagingSenderId: "789517072518",
+        appId: "1:789517072518:web:2c6f4e557537356ecd7907",
+        measurementId: "G-04JE7VERWK"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    window.onload = function () {
+        // const dbRef = firebase.database().ref();
+        const userUid = localStorage.getItem('currentUser')
+        console.log(userUid);
+        firebase.database().ref('MyRen/UserAccount/' + userUid).once('value').then((snapshot) => {
+            if (snapshot.exists()) {
+                var data = snapshot.val();
+                console.log(data);
+                var dbname = data.name;
+                var dbtype = data.displacement;
+                var dbcarnumber = data.carNumber;
+                var dbmodel = data.carType; //반대로 해버린듯 .. 다시해야겠다
+                var dbfuel = data.fuel;
+                var dbinsurance = data.insuranceCompany;
+                var dbemail = data.emailId;
+                var dbnumber = data.parentPhoneNumber;
+                console.log(dbinsurance);
+                var dbnumber = data.parentPhoneNumber;
+                // 이름, 차종, 차량번호, 모델명, 연료, 보험사, 이메일, 연락처
+                document.getElementById("name").value = dbname;
+                document.getElementById("type").value = dbtype;
+                document.getElementById("carnumber").value = dbcarnumber;
+                document.getElementById("model").value = dbmodel;
+                document.getElementById("fuel").value = dbfuel;
+                document.getElementById("insurance").value = dbinsurance;
+                document.getElementById("email").value = dbemail;
+                document.getElementById("number").value = dbnumber;
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+</script>
+
+
 <script>
+
+    function EditUserData() {
+        const user_id = localStorage.getItem('currentUser');
+        // 이름, 차종, 차량번호, 모델명, 연료, 보험사, 이메일, 연락처
+        console.log(document.getElementById("name").value);
+        
+        firebase.database().ref('MyRen/UserAccount/' + user_id).update({
+            carNumber: document.getElementById("carnumber").value,
+            carType: document.getElementById("model").value,
+            displacement: document.getElementById("type").value,
+            emailId: document.getElementById("email").value,
+            fuel: document.getElementById("fuel").value,
+            idToken: user_id,
+            insuranceCompany: document.getElementById("insurance").value,
+            name: document.getElementById("name").value,
+            parentPhoneNumber: document.getElementById("number").value,
+        });
+        window.location.href = "myPage.html";
+    }
+
     // 이메일 체크
     function email_check() {
         var obEmail = document.getElementById("email");
@@ -191,9 +273,11 @@
     function button_orange() {
         var button_success = document.getElementById("button_success");
         button_success.style.backgroundColor = '#F06A3C';
+        button_success.disabled = false;
     }
     function button_gray() {
-        var button_success = document.getElementById("button_success");          
+        var button_success = document.getElementById("button_success");
         button_success.style.backgroundColor = '#B6B3B2';
+        button_success.disabled = true;
     }
 </script>
