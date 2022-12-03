@@ -1,0 +1,199 @@
+﻿<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../css/myPage_edit.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <title>ONESOS - 프로필 편집하기</title>
+</head>
+
+<body>
+    <header>
+        <div class="div_header">
+            <button class="button_leftarrow" target="_self"  onclick="location.href='myPage.html'");><img
+                    src="../image/leftarrow_icon.png"></button>
+            프로필 편집하기
+        </div>
+    </header>
+    <main>
+
+        <form>
+            <a class="text_1">사용자 프로필 편집</a>
+            <br>
+            <a class="text_2">내용 편집 후 아래의 편집 완료 버튼을 눌러주세요.</a>
+
+            <div class="form_design_1">
+                <div class="div_border_1">
+                    <a id="name_box"> 이름 </a><br>
+                    <input onchange="name_check()" id="name" type="text" name="name"><br>
+                </div>
+                <div class="div_border_1">
+                    <a id="type_box">차종</a> <br>
+                    <input onchange="type_check()" id="type" type="text" name="type"><br>
+                </div>
+            </div>
+            <div class="form_design_1">
+                <div class="div_border_1">
+                    <a id="carnumber_box"> 차량번호 </a><br>
+                    <input onchange="carnumber_check()" id="carnumber" type="text" name="carnumber"><br>
+                </div>
+                <div class="div_border_1">
+                    <a id="model_box"> 차량 모델명 </a><br>
+                    <input onchange="model_check()" id="model" type="text" name="model"><br>
+                </div>
+            </div>
+            <div class="form_design_1">
+                <div class="div_border_1">
+                    <a id="fuel_box">차량 연료</a> <br>
+                    <input onchange="fuel_check()" id="fuel" type="text" name="fuel"><br>
+                </div>
+                <div class="div_border_1">
+                    <a id="insurance_box">보험사</a> <br>
+                    <input onchange="insurance_check()" id="insurance" type="text" name="insurance"><br>
+                </div>
+            </div>
+            <div class="div_border_1">
+                <a id="email_box">이메일 </a><br>
+                <input onchange="email_check()" type="text" id="email" name="email"><br>
+            </div>
+            <div class="div_border_1">
+                <a id="number_box">보호자 연락처 </a><br>
+                <input onchange="number_check()" type="text" id="number" name="number"><br>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="div_footer">
+            <button class="button_success" id="button_success" >편집 완료</button>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    // 이메일 체크
+    function email_check() {
+        var obEmail = document.getElementById("email");
+        var email_box = document.getElementById("email_box");
+        var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+        if (!reg_email.test(obEmail.value)) {
+            email_box.innerText = "이메일 - 유효하지 않습니다.";
+            email_box.style.color = '#EB4E3D';
+            return false;
+        }
+        else {
+            email_box.innerText = "이메일";
+            email_box.style.color = '#4FB41F';
+            return true;
+
+        }
+    }
+    // 연락처
+    function number_check() {
+        var obNumber = document.getElementById("number");
+        var number_box = document.getElementById("number_box");
+        var regExpPhone = /^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/; //숫자3,숫자3~4,숫자4자리여야함
+        if (!regExpPhone.test(obNumber.value)) {
+            number_box.innerText = "보호자 연락처 - 유효하지 않습니다.";
+            number_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            number_box.innerText = "보호자 연락처";
+            number_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    // 이름
+    function name_check() {
+        var name_box = document.getElementById("name_box");
+        if (document.getElementById("name").value == "") {
+            name_box.innerText = "이름 - 유효하지 않습니다.";
+            name_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            name_box.innerText = "이름";
+            name_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    function type_check() {
+        var type_box = document.getElementById("type_box");
+        if (document.getElementById("type").value == "") {
+            type_box.innerText = "차종 - 유효하지 않습니다.";
+            type_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            type_box.innerText = "차종";
+            type_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    // 차량번호
+    function carnumber_check() {
+        var carnumber_box = document.getElementById("carnumber_box");
+        if (document.getElementById("carnumber").value == "") {
+            carnumber_box.innerText = "차량 번호 - 유효하지 않습니다.";
+            carnumber_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            carnumber_box.innerText = "차량 번호";
+            carnumber_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    // 차량 모델명
+    function model_check() {
+        var model_box = document.getElementById("model_box");
+        if (document.getElementById("model").value == "") {
+            model_box.innerText = "차량 모델명 - 유효하지 않습니다.";
+            model_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            model_box.innerText = "차량 모델명";
+            model_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    //연료
+    function fuel_check() {
+        var fuel_box = document.getElementById("fuel_box");
+        if (document.getElementById("fuel").value == "") {
+            fuel_box.innerText = "차량 연료 - 유효하지 않습니다.";
+            fuel_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            fuel_box.innerText = "차량 연료";
+            fuel_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    //보험사
+    function insurance_check() {
+        var insurance_box = document.getElementById("insurance_box");
+        if (document.getElementById("insurance").value == "") {
+            insurance_box.innerText = "보험사 - 유효하지 않습니다.";
+            insurance_box.style.color = '#EB4E3D';
+            button_gray();
+        }
+        else {
+            insurance_box.innerText = "보험사";
+            insurance_box.style.color = '#4FB41F';
+            button_orange();
+        }
+    }
+    function button_orange() {
+        var button_success = document.getElementById("button_success");
+        button_success.style.backgroundColor = '#F06A3C';
+    }
+    function button_gray() {
+        var button_success = document.getElementById("button_success");          
+        button_success.style.backgroundColor = '#B6B3B2';
+    }
+</script>
