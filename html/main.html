@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/nav-bar.css">
+    <title>ONE</title>
+</head>
+<body>
+<div class="nav-bar">
+    <div class="logo-img"><img onclick="location.href=''", src="onesos_logo.png"></div>
+</div>
+<main class="mypage-main">
+    <div class="row">
+        <div class="userHello">user님 <br>안녕하세요 <br>오늘도 안전한 하루 되세요~</div>
+        <div class="userDayCount">ONESOS와 함께하는 <br> Day 34</div>
+    </div>
+    <div class="drivingInfo">
+        <div class="row">
+            <div class="drivingRecordTxt">
+                운행기록
+            </div>
+            <div class="carInfoTxt carInfo-C">
+                차량정보
+            </div>
+        </div>
+        <div class="row">
+            <div class="drivingRecord">
+                <h3>어제 주행거리 |</h3>
+                <h3 id="yesterday-driving-distance"> 16.5km</h3>
+                <h3>오늘 주행거리 |</h3>
+                <h3 id="today-driving-distance"> 32.8km</h3>
+                <h3>예상 연비(km/L)</h3>
+                <h3 id="pridict"> 9.8</h3>
+            </div>
+            <div class="carInfo carInfo-C">
+                <h3>차번 |</h3>
+                <h3 id="car-number"> 45두 1234</h3>
+                <h3>차종 |</h3>
+                <h3 id="car-cata"> 준중형</h3>
+                <h3>차명 |</h3>
+                <h3 id="car-model"> 2022 아반떼</h3>
+                <h3>유종 |</h3>
+                <h3 id="car-oil-type"> 가솔린</h3>
+                <h3>보험사 |</h3>
+                <h3 id="car-insurance"> 삼성화재해상보험</h3>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="../js/main.js"></script>
+<footer>
+    <nav class="bar">
+        <ul class="bar__list">
+            <li class="bar__btn">
+                <a class="bar__link" href="main.html"><i class="fas fa-house-user fa-2x"></i></a>
+            <li class="bar__btn">
+                <a class="bar__link" href="history.html"><i class="fas fa-solid fa-list fa-2x"></i></a>
+            </li>
+            <li class="bar__btn">
+                <a class="bar__link" href="myPage.html"><i class="fas fa-info-circle fa-2x"></i></a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+</body>
+<script src="https://kit.fontawesome.com/840353c2e4.js" crossorigin="anonymous"></script>
+</html>

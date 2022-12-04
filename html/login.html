@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>ONESOS 로그인</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+<div class="nav-bar">
+    <div class="logo-img"><img src="onesos_logo.png"></div>
+</div>
+
+<main>
+    <div class="login-container">
+        <form action="#">
+            <input type="text" class="value-input" id="email_login_input" placeholder="이메일">
+            <input type="text" class="value-input" id="password_login_input" placeholder="비밀번호">
+            <button type="button" class="submit-btn" id="login_btn" value="로그인">로그인</button>
+        </form>
+
+        <div class="links">
+            <a href="#">계정찾기</a>
+            <a href="#">비밀번호 찾기</a>
+            <a href="join.html">회원가입</a>
+        </div>
+    </div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+<script src="../js/login.js"></script>
+
+<footer>
+</footer>
+</body>
+</html>

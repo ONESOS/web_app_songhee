@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/join.css">
+    <title>ONESOS 회원가입</title>
+</head>
+<body>
+<div class="nav-bar">
+    <div class="logo-img"><img src="onesos_logo.png"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<main>
+    <div>
+        <h2>회원가입을 위해<br>
+            다음 항목들을 작성해주세요</h2>
+    </div>
+        <form>
+            <label>차량명</label>
+            <input type="text" class="value-input" id="car_name_input" placeholder="차량명을 입력해주세요"></input>
+            <label>유종</label>
+            <select class="value-input" id="car_fuel_select">
+                <option value="none" hidden>차량유종을 선택해주세요</option>
+                <option value="가솔린">가솔린</option>
+                <option value="디젤">디젤</option>
+                <option value="LPG">LPG</option>
+                <option value="전기">전기</option>
+                <option value="하이브리드">하이브리드</option>
+            </select>
+            <label>차량형태</label>
+            <select class="value-input", id="car_displacement_select">
+                <option value="none" hidden>차량형태를 선택해주세요</option>
+                <option value="경차">경차</option>
+                <option value="SUV">SUV</option>
+                <option value="중형차">중형차</option>
+                <option value="대형차">대형차</option>
+            </select>
+            <label class="join_info_label" style="margin-top: 25px;">회원가입 시&nbsp<span class="rule">이용약관</span>,&nbsp<span class="rule">개인정보 처리방침</span>에 대해</label>
+            <label class="join_info_label" style="margin-bottom: 25px;">동의한 것으로 간주됩니다.</label>
+            <button type="button" class="submit-btn" id="register3">확인</button>
+        </form>
+    </div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+<script src="../js/join.js"></script>
+
+<footer>
+</footer>
+</body>
+</html>

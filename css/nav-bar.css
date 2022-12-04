@@ -1,0 +1,23 @@
+ul{
+    list-style:none;
+}
+
+.bar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f9f9fa;
+    padding:20px 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(120, 120, 120, 0.3);
+}
+
+.bar__list{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.bar__link{
+    color:inherit;
+}

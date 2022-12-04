@@ -11,7 +11,7 @@
     <header>
         <div class="div_header">
             <button class="button_leftarrow" target="_self" onclick="location.href='myPage.html'" );><img
-                    src="../image/leftarrow_icon.png"></button>
+                    src="../image/leftarrow_icon.png" style="cursor:pointer"></button>
             프로필 편집하기
         </div>
     </header>
@@ -64,7 +64,8 @@
     </main>
     <footer>
         <div class="div_footer">
-            <button onclick="EditUserData()" class="button_success" id="button_success">편집 완료</button>
+            <button onclick="EditUserData()" class="button_success" id="button_success" style="cursor:pointer">편집
+                완료</button>
         </div>
     </footer>
 
@@ -134,24 +135,31 @@
 
 
 <script>
+    var button_edit = false;
 
     function EditUserData() {
-        const user_id = localStorage.getItem('currentUser');
-        // 이름, 차종, 차량번호, 모델명, 연료, 보험사, 이메일, 연락처
-        console.log(document.getElementById("name").value);
-        
-        firebase.database().ref('MyRen/UserAccount/' + user_id).update({
-            carNumber: document.getElementById("carnumber").value,
-            carType: document.getElementById("model").value,
-            displacement: document.getElementById("type").value,
-            emailId: document.getElementById("email").value,
-            fuel: document.getElementById("fuel").value,
-            idToken: user_id,
-            insuranceCompany: document.getElementById("insurance").value,
-            name: document.getElementById("name").value,
-            parentPhoneNumber: document.getElementById("number").value,
-        });
-        window.location.href = "myPage.html";
+        if (button_edit == true) {
+            const user_id = localStorage.getItem('currentUser');
+            // 이름, 차종, 차량번호, 모델명, 연료, 보험사, 이메일, 연락처
+            console.log(document.getElementById("name").value);
+
+            firebase.database().ref('MyRen/UserAccount/' + user_id).update({
+                carNumber: document.getElementById("carnumber").value,
+                carType: document.getElementById("model").value,
+                displacement: document.getElementById("type").value,
+                emailId: document.getElementById("email").value,
+                fuel: document.getElementById("fuel").value,
+                idToken: user_id,
+                insuranceCompany: document.getElementById("insurance").value,
+                name: document.getElementById("name").value,
+                parentPhoneNumber: document.getElementById("number").value,
+            });
+            window.location.href = "myPage.html";
+        }
+        else {
+            alert("편집할 수 없습니다.");
+        }
+
     }
 
     // 이메일 체크
@@ -175,7 +183,7 @@
     function number_check() {
         var obNumber = document.getElementById("number");
         var number_box = document.getElementById("number_box");
-        var regExpPhone = /^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/; //숫자3,숫자3~4,숫자4자리여야함
+        var regExpPhone = /^[0-9]{11}$/; ///^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/
         if (!regExpPhone.test(obNumber.value)) {
             number_box.innerText = "보호자 연락처 - 유효하지 않습니다.";
             number_box.style.color = '#EB4E3D';
@@ -273,11 +281,11 @@
     function button_orange() {
         var button_success = document.getElementById("button_success");
         button_success.style.backgroundColor = '#F06A3C';
-        button_success.disabled = false;
+        button_edit = true;
     }
     function button_gray() {
         var button_success = document.getElementById("button_success");
         button_success.style.backgroundColor = '#B6B3B2';
-        button_success.disabled = true;
+        button_edit = false;
     }
 </script>

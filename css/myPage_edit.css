@@ -13,6 +13,7 @@ body {
 
 input {
     border: #F6F6F6;
+    width : 100%;
 }
 
 .button_leftarrow {

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/join.css">
+    <title>ONESOS 회원가입</title>
+</head>
+<body>
+<div class="nav-bar">
+    <div class="logo-img"><img src="onesos_logo.png"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<main>
+    <div>
+        <h2>회원가입을 위해<br>
+            다음 항목들을 작성해주세요</h2>
+    </div>
+        <form>
+            <label>이메일</label>
+            <input type="text" class="value-input" id="email_input" placeholder="onesos123@onesos.com"></input>
+            <label>비밀번호</label>
+            <input type="text" class="value-input" id="password_input" placeholder="영문, 숫자, 특수문자 포함 8~16자리"></input>
+            <label>비밀번호 재입력</label>
+            <input type="text" class="value-input" id="password_confirm_input" placeholder="비밀번호를 재입력해주세요"></input>
+              
+            <button type="button" class="submit-btn" id="register1">다음</button>
+        </form>
+    </div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="../js/join.js"></script>
+
+<footer>
+</footer>
+</body>
+</html>

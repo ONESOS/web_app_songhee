@@ -1,0 +1,130 @@
+.app-img{
+    width: 400px;
+    height: 730px;
+    background: #9b9b9b;
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+}
+.app-container{
+    margin: 0 50px 0 100px;
+}
+.intro-txt{
+    margin-bottom: 50px;
+}
+.join-btn{
+    border: none;
+    border-radius:20px;
+    width:486px;
+    height:158px;
+    background-color:#e55622;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+/*.desktop-main*/
+/*{*/
+/*    width:1440px;*/
+/*    height:1024px;*/
+/*    padding:0px;*/
+/*    background-color:#ffffff;*/
+/*    position:absolute;*/
+/*}*/
+/*.사고신고부터접수까지한번에,onesos입니다*/
+/*{*/
+/*    text-align:left;*/
+/*    vertical-align:text-top;*/
+/*    font-size:40px;*/
+/*    font-family:Noto Sans;*/
+/*    letter-spacing:3%;*/
+/*    line-height:60%;*/
+/*    left:46px;*/
+/*    top:264px;*/
+/*    position:absolute;*/
+/*    width:538px;*/
+/*}*/
+/*.rectangle2*/
+/*{*/
+/*    width:401px;*/
+/*    height:723px;*/
+/*    background-color:#d9d9d9;*/
+/*    top:191px;*/
+/*    left:844px;*/
+/*    position:absolute;*/
+/*}*/
+/*.앱화면들어갈거임*/
+/*{*/
+/*    text-align:center;*/
+/*    vertical-align:text-top;*/
+/*    font-size:40px;*/
+/*    font-family:Noto Sans;*/
+/*    left:974px;*/
+/*    top:432px;*/
+/*    width:142px;*/
+/*    height:240px;*/
+/*    position:absolute;*/
+/*    letter-spacing:3%;*/
+/*    line-height:60%;*/
+/*    color:#000000;*/
+/*}*/
+/*.group1*/
+/*{*/
+/*    width:1440px;*/
+/*    height:120px;*/
+/*    position:absolute;*/
+/*}*/
+/*.nav-bar*/
+/*{   padding: 0;*/
+/*    width:1440px;*/
+/*    height:120px;*/
+/*    background-color:#ffffff;*/
+/*    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);*/
+/*}*/
+/*.로고위치*/
+/*{*/
+/*    text-align:left;*/
+/*    vertical-align:text-top;*/
+/*    font-size:40px;*/
+/*    font-family:Inter;*/
+/*    line-height:auto;*/
+/*    color:#000000;*/
+/*    left:46px;*/
+/*    top:36px;*/
+/*    position:absolute;*/
+/*    width:158px;*/
+/*}*/
+/*.vector*/
+/*{*/
+/*    width:52px;*/
+/*    height:35px;*/
+/*    left:1343px;*/
+/*    top:42px;*/
+/*    position:absolute;*/
+/*}*/
+/*.rectangle3*/
+/*{*/
+/*    border-radius:20px;*/
+/*    width:486px;*/
+/*    height:158px;*/
+/*    background-color:#e55622;*/
+/*    top:473px;*/
+/*    left:138px;*/
+/*    position:absolute;*/
+/*}*/
+/*.회원가입후시작하기*/
+/*{*/
+/*    text-align:left;*/
+/*    vertical-align:text-top;*/
+/*    font-size:40px;*/
+/*    font-family:Inter;*/
+/*    left:204px;*/
+/*    top:528px;*/
+/*    width:352px;*/
+/*    height:48px;*/
+/*    position:absolute;*/
+/*    line-height:auto;*/
+/*    color:#ffffff;*/
+/*}*/

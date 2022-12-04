@@ -4,7 +4,8 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../css/myPage.css" rel="stylesheet" type="text/css" />
-    <title>ONESOS - 내 정보</title>
+    <link rel="stylesheet" href="../css/nav-bar.css">
+    <title>ONESOS 내 정보</title>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <div class="div_border_1">
 
             <a class="text_gray">● </a><a class="my_info_1" id="name"></a><a class="text_orange_1"
-                onclick="location.href='myPage_edit.html'" );>프로필 편집하기</a><br>
+                onclick="location.href='myPage_edit.html'" style="cursor:pointer" );>프로필 편집하기</a><br>
             <a class="text_gray">● </a><a class="my_info_1" id="carnumber"></a><br>
             <a class="text_gray">● </a><a class="my_info_1" id="insurance"></a><br>
             <a class="text_gray">이메일 </a> <a id="email"></a> <br>
@@ -28,36 +29,38 @@
 
         <div class="div_border_2">
             <div target="_self" onclick="location.href='myPage_notice.html'" );>
-                공지사항 <a class="text_orange_2">새로운 공지사항</a></div>
+                공지사항 <a class="text_orange_2" style="cursor:pointer">새로운 공지사항</a></div>
             <hr>
-            <div target="_self" onclick="location.href='#'" );>
+            <div target="_self" onclick="location.href='history.html'" );>
                 신고기록</div>
             <hr>
             <div target="_self" onclick="location.href='#'" );>
                 버전정보</div>
             <hr>
         </div>
-        onesos
     </main>
-    <footer>
-        <div class="div_footer">
-            <div class="nav">
-                <ul>
-                    <li><a href="#"><img src="../image/home.png"></a></li>
-                    <li><a href="#"><img src="../image/report.png"></a></li>
-                    <li><a href="#"><img src="../image/myinformation.png"></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+
 
 </body>
-
+<footer>
+    <nav class="bar">
+        <ul class="bar__list">
+            <li class="bar__btn">
+                <a class="bar__link" href="main.html"><i class="fas fa-house-user fa-2x"></i></a>
+            <li class="bar__btn">
+                <a class="bar__link" href="history.html"><i class="fas fa-solid fa-list fa-2x"></i></a>
+            </li>
+            <li class="bar__btn">
+                <a class="bar__link" href="myPage.html"><i class="fas fa-info-circle fa-2x"></i></a>
+            </li>
+        </ul>
+    </nav>
+</footer>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
-
+<script src="https://kit.fontawesome.com/840353c2e4.js" crossorigin="anonymous"></script>
 <script type="module">
 
 

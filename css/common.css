@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+main{
+    margin: 0 40px;
+}
+footer{
+    height: 200px;
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    height: 120px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.logo-img{
+    float:left;
+}

@@ -1,0 +1,13 @@
+.mypage-main{
+    display: table;
+}
+.row{
+    display: table-row;
+    border-collapse: separate;
+}
+.drivingRecord, .carInfo,.drivingRecordTxt,.carInfoTxt,.userDayCount,.userHello{
+    display: table-cell;
+    padding: 3px 10px;
+    margin-left: 10px;
+    border: 1px solid #e55622;
+}

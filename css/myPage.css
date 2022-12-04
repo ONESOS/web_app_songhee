@@ -80,19 +80,6 @@ main {
 
 }
 
-.nav {
-    font-size: 0;
-    display: inline-block;
-}
-
-.nav ul li {
-    margin: 10 50 10 10px;
-    display: inline-block;
-}
-
-.nav img {
-    width: 60%;
-}
 
 
 hr {

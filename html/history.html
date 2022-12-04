@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/nav-bar.css">
+   
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="../js/history.js"></script>
+    <title>ONESOS 사고기록</title>
+    <div class="nav-bar">
+      <div class="logo-img"><img src="onesos_logo.png"></div>
+  </div>
+</head>
+<body>
+
+<main>
+    <div>
+        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="menu_btn" data-bs-toggle="tab" 
+              data-bs-target="#home" type="button" role="tab" aria-controls="home" 
+              aria-selected="true" value="충돌 감지" onclick="menu_select(1)">충돌 감지</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="menu_btn" data-bs-toggle="tab" 
+              data-bs-target="#profile" type="button" role="tab" aria-controls="profile" 
+              aria-selected="false" value="12344" onclick="menu_select(2)">직접 신고</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="menu_btn" data-bs-toggle="tab" 
+              data-bs-target="#contact" type="button" role="tab" aria-controls="contact" 
+              aria-selected="false" value="속도 감지" onclick="menu_select(3)">속도 감지</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+              <table border="1" id="accidentRecordTable"></table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+  <nav class="bar">
+    <ul class="bar__list">
+        <li class="bar__btn">
+            <a class="bar__link" href="main.html"><i class="fas fa-house-user fa-2x"></i></a>
+        <li class="bar__btn">
+            <a class="bar__link" href="history.html"><i class="fas fa-solid fa-list fa-2x"></i></a>
+        </li>
+        <li class="bar__btn">
+            <a class="bar__link" href="myPage.html"><i class="fas fa-info-circle fa-2x"></i></a>
+        </li>
+    </ul>
+</nav>
+</footer>
+</body>
+<script src="https://kit.fontawesome.com/840353c2e4.js" crossorigin="anonymous"></script>
+</html>
